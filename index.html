@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="groowie">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/hat.css">
+    <title>Groowie</title>
+</head>
+
+<body>
+
+    <header></header>
+    <ui-view></ui-view>
+    <footer></footer>
+
+    <!-- Angular first-->
+    <script src="node_modules/angular/angular.min.js"></script>
+
+    <!--Le routeur dont Angular se servira-->
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <!--On inclu notre application-->
+    <script src="./app.js"></script>
+
+    <!--Puis les components dont notre appli se sert-->
+    <script src="./app/components/header/header.js"></script>
+    <script src="./app/components/home/home.js"></script>
+    <script src="./app/components/artist/artist.js"></script>
+    <script src="./app/components/label/label.js"></script>
+    <script src="./app/components/realisation/realisation.js"></script>
+    <script src="./app/components/footer/footer.js"></script>
+
+</body>
+
+</html>
