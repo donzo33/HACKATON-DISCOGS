@@ -2,7 +2,7 @@
 
 angular.module("groowie", [
     // les dépendances externes
-    "ui.router"
+    "ui.router", "ngResource"
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -14,7 +14,7 @@ angular.module("groowie", [
         {
             name: "artist",
             url: "/artist",
-            component: "editPage"
+            component: "artist"
         },
         {
             name: "realisation",
