@@ -1,5 +1,7 @@
 "use strict";
 
+const AUTH = { key: "KXsWgHPzKNpMSXJtHBEy", secret: "EMAGVRQHJCJkplwenadJGVtbxMVKXFyh" };
+
 angular.module("groowie", [
     // les dépendances externes
     "ui.router", "ngResource"

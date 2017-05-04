@@ -12,28 +12,29 @@ angular.module("groowie").component("home", {
 
 function home($scope, $resource) {;
 
-    var artistHome = $resource("https://api.discogs.com/artists/5000");
-    var artistRelease = $resource("https://api.discogs.com/artists/5000/releases");
+    var artistHome = $resource("https://api.discogs.com/artists/1", AUTH);
+    var artistRelease = $resource("https://api.discogs.com/artists/5000/releases", AUTH);
     //var artistLabel =*/
 
 
 
     //&token=CKbUrmUOMAiRpfxvebaRwXZRMhiVmkAVjPGbZxJK
 
-    //search For Artist 
+    //search For artist 
 
     artistHome.get().$promise
         .then(function(response) {
             $scope.artName = response.name;
+            // console.log(response);
         });
 
 
-    //search For artistLabel
+    //search For artistRelease
 
     artistRelease.get().$promise
         .then(function(response) {
             $scope.artRels = response.releases;
-            console.log($scope.artRels)
+            console.log(response)
 
         });
 
