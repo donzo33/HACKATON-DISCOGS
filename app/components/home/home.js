@@ -12,8 +12,8 @@ angular.module("groowie").component("home", {
 
 function home($scope, $resource) {;
 
-    var artistHome = $resource("https://api.discogs.com/artists/1000");
-    var artistRelease = $resource("https://api.discogs.com/artists/1000/releases");
+    var artistHome = $resource("https://api.discogs.com/artists/5000");
+    var artistRelease = $resource("https://api.discogs.com/artists/5000/releases");
     //var artistLabel =*/
 
 
@@ -24,8 +24,6 @@ function home($scope, $resource) {;
 
     artistHome.get().$promise
         .then(function(response) {
-
-            //console.log(response);
             $scope.artName = response.name;
         });
 
@@ -34,9 +32,9 @@ function home($scope, $resource) {;
 
     artistRelease.get().$promise
         .then(function(response) {
+            $scope.artRels = response.releases;
+            console.log($scope.artRels)
 
-            console.log(response);
-            $scope.artLab = response;
         });
 
 
