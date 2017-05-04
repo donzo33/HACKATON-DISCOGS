@@ -1,0 +1,23 @@
+{
+  "name": "discodev",
+  "version": "1.0.0",
+  "description": "app for discogs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donzo33/HACKATON-DISCOGS.git"
+  },
+  "author": "donzo_vaness_fafa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/donzo33/HACKATON-DISCOGS/issues"
+  },
+  "homepage": "https://github.com/donzo33/HACKATON-DISCOGS#readme",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-ui-router": "^1.0.0-rc.1"
+  }
+}
