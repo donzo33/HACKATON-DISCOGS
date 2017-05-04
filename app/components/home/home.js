@@ -11,32 +11,38 @@ angular.module("groowie").component("home", {
 //on utilise la fonction HTTP request d'angular 
 
 function home($scope, $resource) {;
+    var artistList = [],
+        artistReleases = [],
+        idArtists = [1, 99, 40, 14, 900, 2, 30, 6574, 3255, 5];
 
-    var artistHome = $resource("https://api.discogs.com/artists/1", AUTH);
-    var artistRelease = $resource("https://api.discogs.com/artists/5000/releases", AUTH);
-    //var artistLabel =*/
+    for (let i = 0; i < idArtists.length; i++) {
+        $resource("https://api.discogs.com/artists/" + idArtists[i], AUTH).get().$promise
+            .then(function(response) {
+                artistList.push(response);
+            });
 
+        $resource("https://api.discogs.com/artists/" + idArtists[i] + "/releases", AUTH).get().$promise
+            .then(function(response) {
+                artistReleases.push(response);
+                console.log(artistReleases);
+            });
 
+        //artistRelease = $resource("https://api.discogs.com/artists/" + idArtists[i] + "/releases", AUTH);
+        //search For artist 
 
-    //&token=CKbUrmUOMAiRpfxvebaRwXZRMhiVmkAVjPGbZxJK
+        //var artistLabel =*/
 
-    //search For artist 
-
-    artistHome.get().$promise
-        .then(function(response) {
-            $scope.artName = response.name;
-            // console.log(response);
-        });
-
-
+    }
+    $scope.artistList = artistList;
+    $scope.artistReleases = artistReleases;
     //search For artistRelease
 
-    artistRelease.get().$promise
-        .then(function(response) {
-            $scope.artRels = response.releases;
-            console.log(response)
+    // artistRelease.get().$promise
+    //     .then(function(response) {
+    //         $scope.artRels = response.releases;
+    //         // console.log(response)
 
-        });
+    //     });
 
 
 };

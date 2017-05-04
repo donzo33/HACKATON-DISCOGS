@@ -1,17 +1,9 @@
-<div>{{artName}}</div>
+<div ng-repeat="artist in artistList">
+    <div>Hello {{artist.name}}</div>
+    <img ng-src="{{artist.images[0].uri}}" />
+    <div ng-repeat="artistRelease in artistReleases">
+        <div>Hi {{artistRelease.releases[0].title}}</div>
+        <img ng-src="{{artistRelease.releases[0].thumb}}" />
 
-
-<div ng-repeat="release in artRels | orderBy: '+year'|limitTo:-3">
-
-    <div>{{release.artist}}</div>
-    <!--le nom des artiste-->
-    <div>{{release.title}}</div>
-    <!--le nom de ces release-->
-    <div>{{release.year}}</div>
-    <!--l'anée de ces release-->
-    <div>{{release.label}}</div>
-    <!-- le label si il y a -->
-
-    <img ng-src="{{release.thumb}}" />
-
+    </div>
 </div>
