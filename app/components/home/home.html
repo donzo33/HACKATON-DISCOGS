@@ -1,1 +1,6 @@
 <div>{{artName}}</div>
+
+
+<div ng-repeat="release in artRels | orderBy: '+year'">
+    <li> {{release}}</li>
+</div>
