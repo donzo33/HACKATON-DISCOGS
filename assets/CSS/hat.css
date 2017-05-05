@@ -4,3 +4,8 @@ body {
     width: 100%;
     background-color: grey;
 }
+
+header {
+    background-color: purple;
+    height: 20%;
+}
