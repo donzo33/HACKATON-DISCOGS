@@ -22,7 +22,7 @@ function home($scope, $resource) {;
             .$promise
             .then(function(response) {
                 $scope.resultLab = response.results;
-                console.log(response);
+                console.log(response.results[0].id);
             });
 
     }
@@ -42,7 +42,7 @@ function home($scope, $resource) {;
         $resource("https://api.discogs.com/artists/" + idArtists[i] + "/releases", AUTH).get().$promise
             .then(function(response) {
                 artistReleases.push(response);
-                console.log(artistReleases);
+                // console.log($ctrl.artistReleases.results[0].id);
             });
 
         //artistRelease = $resource("https://api.discogs.com/artists/" + idArtists[i] + "/releases", AUTH);

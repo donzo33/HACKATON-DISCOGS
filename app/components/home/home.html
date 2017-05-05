@@ -4,8 +4,9 @@
     <div>
         <img ng-src="{{resultLab[0].thumb}}" />
 
-        <a ui-sref="{{$ctrl.links[1]}}" ui-sref-active="active">
+        <a ui-sref="artist ({ id: resultLab[0].id })" ui-sref-active="active">
             {{resultLab[0].title}}
+             <!--{{ $location.url() }}-->
         </a>
 
 
