@@ -11,14 +11,32 @@ angular.module("groowie").component("home", {
 //on utilise la fonction HTTP request d'angular 
 
 function home($scope, $resource) {;
+
+    this.query = "";
+    var resultLab = [];
+    //on utilise la fonction recherche sur label
+    $scope.activeButton = function() {
+        $resource("https://api.discogs.com/database/search?q=" +
+                $scope.query +
+                "&?label", AUTH).get()
+            .$promise
+            .then(function(response) {
+                $scope.resultLab = response.results;
+                console.log(response);
+            });
+
+    }
+    this.links = ["home", "artist", "label"];
+
     var artistList = [],
         artistReleases = [],
         idArtists = [1, 99, 40, 14, 900, 2, 30, 6574, 3255, 5];
 
-    for (let i = 0; i < idArtists.length; i++) {
+    for (let i = 0; i < 1; i++) {
         $resource("https://api.discogs.com/artists/" + idArtists[i], AUTH).get().$promise
             .then(function(response) {
                 artistList.push(response);
+
             });
 
         $resource("https://api.discogs.com/artists/" + idArtists[i] + "/releases", AUTH).get().$promise
@@ -35,6 +53,7 @@ function home($scope, $resource) {;
     }
     $scope.artistList = artistList;
     $scope.artistReleases = artistReleases;
+    $scope.resultLab = resultLab;
     //search For artistRelease
 
     // artistRelease.get().$promise

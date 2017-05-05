@@ -1,3 +1,20 @@
+<div>
+    <input type="text" ng-keypress="checkKey($event)" ng-model="query" placeholder="Entrez-votre label ici...">
+    <button ng-click="activeButton()">Search!</button>
+    <div>
+        <img ng-src="{{resultLab[0].thumb}}" />
+
+        <a ui-sref="{{$ctrl.links[1]}}" ui-sref-active="active">
+            {{resultLab[0].title}}
+        </a>
+
+
+
+    </div>
+</div>
+
+
+
 <div ng-repeat="artist in artistList">
     <div>Hello {{artist.name}}</div>
     <img ng-src="{{artist.images[0].uri}}" />
