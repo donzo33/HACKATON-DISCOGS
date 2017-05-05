@@ -1,0 +1,11 @@
+<div>{{labelInfo[0].title}}</div>
+
+<img ng-src="{{labelInfo[0].images[0].uri}}" />
+<img ng-src="{{labelInfo[0].images[2].uri}}" />
+
+<div>{{labelInfo[0].year}}</div>
+<div>{{labelInfo[0].country}}</div>
+<div ng-repeat="tracks in labelInfo[0].tracklist">
+    {{tracks.title}} {{tracks.duration}} Face {{tracks.position}} {{tracks.labels[0].name}}
+    <img ng-src="{{labelInfo[0].thumb}}" />
+</div>

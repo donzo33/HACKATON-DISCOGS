@@ -5,14 +5,14 @@ angular.module("groowie").component("artist", {
 })
 
 function ARTIST($scope, $resource, $stateParams) {
-    console.log($stateParams.id)
+    //console.log($stateParams.id)
     var artistInfo = [],
         artistRelease = [];
     //on prend les info de l'artiste
     $resource("https://api.discogs.com/artists/" + $stateParams.id, AUTH).get().$promise
         .then(function(response) {
             artistInfo.push(response);
-            console.log(artistInfo);
+            // console.log(artistInfo);
 
         })
 
@@ -21,7 +21,7 @@ function ARTIST($scope, $resource, $stateParams) {
         .then(function(response) {
             artistRelease.push(response);
 
-            console.log(response.releases)
+            //console.log(response.releases)
             $scope.artistRelease = response.releases;
 
 

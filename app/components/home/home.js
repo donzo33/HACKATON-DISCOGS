@@ -14,6 +14,7 @@ function home($scope, $resource) {;
 
     this.query = "";
     var resultLab = [];
+    var releasesInfo = [];
     //on utilise la fonction recherche sur label
     $scope.activeButton = function() {
         $resource("https://api.discogs.com/database/search?q=" +
@@ -23,6 +24,11 @@ function home($scope, $resource) {;
             .then(function(response) {
                 $scope.resultLab = response.results;
                 console.log(response.results[0]);
+                $resource("https://api.discogs.com/masters/" + response.results[0].id, AUTH).get().$promise
+                    .then(function(response) {
+                        releasesInfo.push(response.main_release);
+                        $scope.releasesInfo = releasesInfo;
+                    });
             });
 
     }
