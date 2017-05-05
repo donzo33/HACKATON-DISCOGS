@@ -1,0 +1,23 @@
+<div ng-if="artistInfo[0].name.length > 0">
+
+    {{artistInfo[0].name}}
+</div>
+<div ng-if="artistInfo[0].name.length<0">
+    Nous n'avons pas d'information désolé !
+</div>
+
+<div ng-if="artistInfo[0].profile.length > 0">
+
+    {{artistInfo[0].profile }}
+</div>
+<div ng-if="artistInfo[0].profile.length<0">
+    Nous n'avons pas d'information désolé !
+</div>
+
+
+<img ng-src="{{artistInfo[0].images[1].uri}}" />
+<div ng-repeat="release in artistRelease">
+
+    {{release.title}} {{release.label}} {{ release.year}}
+    <img ng-src="{{release.thumb}}" />
+</div>

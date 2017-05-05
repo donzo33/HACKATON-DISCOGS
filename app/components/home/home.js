@@ -22,7 +22,7 @@ function home($scope, $resource) {;
             .$promise
             .then(function(response) {
                 $scope.resultLab = response.results;
-                console.log(response.results[0].id);
+                console.log(response.results[0]);
             });
 
     }

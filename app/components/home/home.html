@@ -3,12 +3,21 @@
     <button ng-click="activeButton()">Search!</button>
     <div>
         <img ng-src="{{resultLab[0].thumb}}" />
-
-        <a ui-sref="artist ({ id: resultLab[0].id })" ui-sref-active="active">
+        <div ng-if="resultLab[0].type === 'label'">
+            <a ui-sref="label ({ id: resultLab[0].id })" ui-sref-active="active">
+           
             {{resultLab[0].title}}
              <!--{{ $location.url() }}-->
         </a>
+        </div>
 
+        <div ng-if="resultLab[0].type === 'artist'">
+            <a ui-sref="artist ({ id: resultLab[0].id })" ui-sref-active="active">
+           
+            {{resultLab[0].title}}
+             <!--{{ $location.url() }}-->
+        </a>
+        </div>
 
 
     </div>
@@ -17,11 +26,14 @@
 
 
 <div ng-repeat="artist in artistList">
-    <div>Hello {{artist.name}}</div>
-    <img ng-src="{{artist.images[0].uri}}" />
-    <div ng-repeat="artistRelease in artistReleases">
-        <div>Hi {{artistRelease.releases[0].title}}</div>
-        <img ng-src="{{artistRelease.releases[0].thumb}}" />
+    <div>
+        <a ui-sref="artist ({ id: artist.id })" ui-sref-active="active">{{artist.name}}</a></div>
 
-    </div>
+    <a ui-sref="artist ({ id: artist.id })" ui-sref-active="active"><img ng-src="{{artist.images[0].uri}}" /></a>
+</div>
+<div ng-repeat="artistRelease in artistReleases">
+    <div>{{artistRelease.title}}</div>
+    <img ng-src="{{artistRelease.thumb}}" />
+
+</div>
 </div>

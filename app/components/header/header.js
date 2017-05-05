@@ -6,5 +6,5 @@ angular.module("groowie").component("header", {
 })
 
 function Header() {
-    this.links = ["home", "artist", "label"];
+    this.links = ["home"];
 }
