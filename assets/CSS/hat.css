@@ -1,11 +1,26 @@
 html,
 body {
+    
     height: 100%;
     width: 100%;
     background-color: grey;
 }
 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
 header {
     background-color: purple;
     height: 20%;
+}
+
+
+h1 {
+    font-family: 'FredokaOne';
+    font-size: 21px;
+
 }
