@@ -18,6 +18,6 @@
 <img ng-src="{{artistInfo[0].images[1].uri}}" />
 <div ng-repeat="release in artistRelease">
 
-    {{release.title}} {{release.label}} {{ release.year}}
+    Titre: {{release.title}} <br>Label: {{release.label||"non communiqué"}} <br>Année: {{ release.year}}
     <img ng-src="{{release.thumb}}" />
 </div>
